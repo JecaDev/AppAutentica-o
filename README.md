@@ -9,7 +9,7 @@ as principais partes do código para ajudar na compreensão:**
 
 **Pacote e Importações:**
 
-package com.example.appautenticao;
+```package com.example.appautenticao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import com.example.appautenticao.databinding.ActivityLoginBinding;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;```
 
 **Aqui, o pacote do código é definido como "com.example.appautenticao",
 e algumas classes e interfaces necessárias são importadas, incluindo as
@@ -33,23 +33,23 @@ relacionadas ao Android e ao Firebase Authentication.**
 
 **Declaração da Classe:**
 
-public class LoginActivity extends AppCompatActivity {
+```public class LoginActivity extends AppCompatActivity {```
 
 A classe LoginActivity estende a classe AppCompatActivity, que é uma
 classe base para atividades que usam a biblioteca de suporte do Android.
 
 **Atributos da Classe:**
 
-private ActivityLoginBinding binding;
+```private ActivityLoginBinding binding;
 
-private FirebaseAuth mAuth;
+private FirebaseAuth mAuth;```
 
 **Aqui, estão sendo declaradas instâncias de ActivityLoginBinding e
 FirebaseAuth como atributos da classe.**
 
 **Método onCreate:**
 
-@Override
+```@Override
 
 protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,11 +59,11 @@ binding = ActivityLoginBinding.inflate(getLayoutInflater());
 
 setContentView(binding.getRoot());
 
-mAuth = FirebaseAuth.getInstance();
+mAuth = FirebaseAuth.getInstance();```
 
 // Configuração de cliques nos elementos da interface
 
-binding.textCadastro.setOnClickListener(v -> {
+```binding.textCadastro.setOnClickListener(v -> {
 
 startActivity(new Intent(this, CadastroActivity.class));
 
@@ -74,7 +74,7 @@ binding.btnLogin.setOnClickListener(v -> validaDados());
 binding.textRecuperaConta.setOnClickListener(v -> startActivity(new
 Intent(this, RecuperaContaActivity.class)));
 
-}
+}```
 
 **O método onCreate é chamado quando a atividade é criada. Ele configura
 a interface do usuário definida no arquivo de layout
@@ -83,7 +83,7 @@ interface.**
 
 **Método validaDados:**
 
-private void validaDados() {
+```private void validaDados() {
 
 // Obtém e valida o email e a senha
 
@@ -111,7 +111,7 @@ Toast.makeText(this, "Informe seu e-mail.", Toast.LENGTH_SHORT).show();
 
 }
 
-}
+}```
 
 **Este método é responsável por validar os dados de entrada do usuário
 (email e senha) e chamar o método loginFirebase se os dados forem
@@ -119,7 +119,7 @@ válidos.**
 
 **Método loginFirebase:**
 
-private void loginFirebase(String email, String senha) {
+```private void loginFirebase(String email, String senha) {
 
 // Autentica o usuário no Firebase
 
@@ -146,7 +146,7 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 });
 
-}
+}```
 
 **Este método utiliza o Firebase Authentication para tentar autenticar o
 usuário com o email e senha fornecidos. Se a autenticação for
@@ -162,7 +162,7 @@ descrever as partes principais do código:**
 
 **Pacote e Importações:**
 
-package com.example.appautenticao;
+```package com.example.appautenticao;
 
 import androidx.annotation.NonNull;
 
@@ -192,29 +192,23 @@ import com.google.android.gms.tasks.Task;
 
 import com.google.firebase.auth.AuthResult;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;```
 
 As importações incluem classes relacionadas ao Android, Firebase
 Authentication e outras dependências necessárias.
 
 **Declaração da Classe:**
 
-java
-
-Copy code
-
-public class CadastroActivity extends AppCompatActivity {
+```
+public class CadastroActivity extends AppCompatActivity {```
 
 A classe CadastroActivity estende a classe AppCompatActivity, indicando
 que é uma atividade Android.
 
 **Atributos da Classe:**
 
-java
 
-Copy code
-
-private FirebaseAuth mAuth;
+```private FirebaseAuth mAuth;
 
 private EditText editEmail;
 
@@ -224,7 +218,7 @@ private Button btnCriarConta;
 
 private ProgressBar progressBar;
 
-private ActivityCadastroBinding binding;
+private ActivityCadastroBinding binding;```
 
 **Esses são os atributos da classe, representando instâncias de
 FirebaseAuth (para autenticação), EditText (para entrada de email e
@@ -233,7 +227,7 @@ progresso).**
 
 **Método onCreate:**
 
-@Override
+```@Override
 
 protected void onCreate(Bundle savedInstanceState) {
 
@@ -247,7 +241,7 @@ mAuth = FirebaseAuth.getInstance();
 
 binding.btnLogin.setOnClickListener(v -> validaDados());
 
-}
+}```
 
 **O método onCreate é chamado quando a atividade é criada. Ele configura
 a interface do usuário definida no arquivo de layout
@@ -256,7 +250,7 @@ o método validaDados().**
 
 **Método validaDados:**
 
-private void validaDados() {
+```private void validaDados() {
 
 String email = binding.editEmail.getText().toString().trim();
 
@@ -282,7 +276,7 @@ Toast.makeText(this, "Informe seu e-mail.", Toast.LENGTH_SHORT).show();
 
 }
 
-}
+}```
 
 **Este método é responsável por validar os dados de entrada do usuário
 (email e senha) e chamar o método criarContaFirebase se os dados forem
@@ -290,7 +284,7 @@ válidos.**
 
 **Método criarContaFirebase:**
 
-private void criarContaFirebase(String email, String senha) {
+```private void criarContaFirebase(String email, String senha) {
 
 mAuth.createUserWithEmailAndPassword(email,
 senha).addOnCompleteListener(task -> {
@@ -311,7 +305,7 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 });
 
-}
+}```
 
 **Este método utiliza o Firebase Authentication para criar uma nova
 conta de usuário com o email e senha fornecidos. Se a criação de conta
@@ -334,7 +328,7 @@ código:**
 
 **Pacote e Importações:**
 
-package com.example.appautenticao;
+```package com.example.appautenticao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -349,23 +343,23 @@ import android.widget.Toast;
 import
 com.example.appautenticao.databinding.ActivityRecuperaContaBinding;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;```
 
 **As importações incluem classes relacionadas ao Android, Firebase
 Authentication e outras dependências necessárias.**
 
 **Declaração da Classe:**
 
-public class RecuperaContaActivity extends AppCompatActivity {
+```public class RecuperaContaActivity extends AppCompatActivity {```
 
 **A classe RecuperaContaActivity estende a classe AppCompatActivity,
 indicando que é uma atividade Android.**
 
 **Atributos da Classe**:
 
-private FirebaseAuth mAuth;
+```private FirebaseAuth mAuth;
 
-private ActivityRecuperaContaBinding binding;
+private ActivityRecuperaContaBinding binding;```
 
 **Esses são os atributos da classe, representando instâncias de
 FirebaseAuth (para autenticação) e ActivityRecuperaContaBinding (para
@@ -373,7 +367,7 @@ vincular com a interface definida no arquivo de layout).**
 
 **Método onCreate:**
 
-@Override
+```@Override
 
 protected void onCreate(Bundle savedInstanceState) {
 
@@ -387,7 +381,7 @@ mAuth = FirebaseAuth.getInstance();
 
 binding.btnRecuperaConta.setOnClickListener(v -> validaDados());
 
-}
+}```
 
 **O método onCreate é chamado quando a atividade é criada. Ele configura
 a interface do usuário definida no arquivo de layout
@@ -396,7 +390,7 @@ método validaDados().**
 
 **Método validaDados:**
 
-private void validaDados() {
+```private void validaDados() {
 
 String email = binding.editEmail.getText().toString().trim();
 
@@ -412,7 +406,7 @@ Toast.makeText(this, "Informe seu e-mail.", Toast.LENGTH_SHORT).show();
 
 }
 
-}
+}```
 
 **Este método é responsável por validar os dados de entrada do usuário
 (apenas o email neste caso) e chama o método recuperaContaFirebase se os
@@ -420,7 +414,7 @@ dados forem válidos.**
 
 **Método recuperaContaFirebase:**
 
-private void recuperaContaFirebase(String email) {
+```private void recuperaContaFirebase(String email) {
 
 mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
 
@@ -446,7 +440,7 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 });
 
-}
+}```
 
 **Este método utiliza o Firebase Authentication para enviar um e-mail de
 redefinição de senha para o endereço de e-mail fornecido pelo usuário.
@@ -472,7 +466,7 @@ pública de CEP (Código de Endereçamento Postal) no Brasil.**
 
 **Pacote e Importações:**
 
-package com.example.appautenticao;
+```package com.example.appautenticao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -499,7 +493,7 @@ import java.io.InputStreamReader;
 
 import java.net.HttpURLConnection;
 
-import java.net.URL;
+import java.net.URL;```
 
 **As importações incluem classes relacionadas ao Android, recursos de
 interface do usuário e classes necessárias para realizar uma consulta
@@ -507,7 +501,7 @@ HTTP.**
 
 **Declaração da Classe:**
 
-public class MainActivity extends AppCompatActivity {
+```public class MainActivity extends AppCompatActivity {
 
 A classe MainActivity estende a classe AppCompatActivity, **indicando
 que é uma atividade Android.**
@@ -518,7 +512,7 @@ private Button button;
 
 private TextView textView;
 
-private ActivityMainBinding binding;
+private ActivityMainBinding binding;```
 
 Esses são os atributos da classe, representando instâncias de Button e
 TextView e ActivityMainBinding para vincular a interface definida no
@@ -526,7 +520,7 @@ arquivo de layout.
 
 **Método onCreate:**
 
-@Override
+```@Override
 
 protected void onCreate(Bundle savedInstanceState) {
 
@@ -554,7 +548,7 @@ tarefa.execute("https://viacep.com.br/ws/01001000/json/");
 
 });
 
-}
+}```
 
 **O método onCreate é chamado quando a atividade é criada. Ele configura
 a interface do usuário definida no arquivo de layout ActivityMainBinding
@@ -564,7 +558,7 @@ consulta à API ViaCEP para o CEP 01001000.**
 
 **Classe Interna Tarefa (AsyncTask):**
 
-private class Tarefa extends AsyncTask\<String, String, String>{
+```private class Tarefa extends AsyncTask\<String, String, String>{
 
 @Override
 
@@ -584,7 +578,7 @@ textView.setText(s);
 
 }
 
-}
+}```
 
 **Esta é uma classe interna (Tarefa) que estende AsyncTask. O método
 doInBackground é responsável por executar a tarefa em segundo plano,
@@ -614,11 +608,11 @@ brasileira (ViaCEP).**
 
 **Pacote e Importações:**
 
-package com.example.appautenticao;
+```package com.example.appautenticao;```
 
 **Classe conexao:**
 
-public class conexao {
+```public class conexao {```
 
 **A classe conexao é declarada como pública, e ela possui um método
 estático chamado getDados que recebe uma URI como parâmetro e retorna os
@@ -626,7 +620,7 @@ dados obtidos da solicitação HTTP.**
 
 **Método getDados:**
 
-public static String getDados(String uri){
+```public static String getDados(String uri){
 
 BufferedReader bufferedReader = null;
 
@@ -676,7 +670,7 @@ e.printStackTrace();
 
 }
 
-}
+}```
 
 **O método getDados realiza uma solicitação HTTP GET para a URI
 fornecida.**
@@ -729,7 +723,7 @@ build.gradle (project-level).**
 manipulação de elementos da interface do usuário. Para habilitar o View
 Binding, adicione no arquivo build.gradle (app-level):**
 
-android {
+```android {
 
 ...
 
@@ -753,7 +747,7 @@ dataBinding true
 
 }
 
-}
+}```
 
 **Passo a passo do desenvolvimento do projeto:**
 
@@ -827,7 +821,7 @@ consulta em segundo plano.**
 
 **Criação de uma nova conta:**
 
-mAuth.createUserWithEmailAndPassword(email,
+```mAuth.createUserWithEmailAndPassword(email,
 senha).addOnCompleteListener(task -> {
 
 if (task.isSuccessful()) {
@@ -840,11 +834,11 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 }
 
-});
+});```
 
 **Login de um usuário existente:**
 
-mAuth.signInWithEmailAndPassword(email,
+```mAuth.signInWithEmailAndPassword(email,
 senha).addOnCompleteListener(task -> {
 
 if (task.isSuccessful()) {
@@ -861,11 +855,11 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 }
 
-});
+});```
 
 **Recuperação de conta por e-mail:**
 
-mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+```mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
 
 if (task.isSuccessful()) {
 
@@ -882,13 +876,13 @@ Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
 
 }
 
-});
+});```
 
 **Consulta à API ViaCEP:**
 
 **Implementação da classe conexao para realizar solicitações HTTP:**
 
-public static String getDados(String uri){
+```public static String getDados(String uri){
 
 BufferedReader bufferedReader = null;
 
@@ -938,11 +932,11 @@ e.printStackTrace();
 
 }
 
-}
+}```
 
 **Uso da classe conexao para realizar a consulta:**
 
-Tarefa tarefa = new Tarefa();
+```Tarefa tarefa = new Tarefa();
 
 tarefa.execute("https://viacep.com.br/ws/01001000/json/");
 
@@ -968,7 +962,7 @@ textView.setText(s);
 
 }
 
-}
+}```
 
 **Esses trechos de código representam a implementação de funcionalidades
 chave, incluindo autenticação Firebase, validação de dados, interação
