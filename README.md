@@ -982,7 +982,7 @@ experiência de usuário responsiva.**
 **Na tela inicial, clique no botão de "Cadastro" para criar uma nova
 conta.**
 
-<img src="media/image4.png" style="width:1.92188in;height:3.73632in" />
+<img [Print1](https://github.com/JecaDev/AppAutentica-o/assets/129800662/20d1ebce-8447-4688-9b7c-eb3ea3a14f10)/>
 
 ### 
 
@@ -996,14 +996,15 @@ conta.**
 
 **Clique no botão de criação de conta.**
 
-### <img src="media/image2.png" style="width:2.35949in;height:5.07198in" />
+### <img ![Print1](https://github.com/JecaDev/AppAutentica-o/assets/129800662/183ed915-6751-46c0-8f63-aaf99fdcbc20)/>
+
 
 ### Confirmação:
 
 **Se a criação da conta for bem-sucedida, você será redirecionado para a
 tela principal do aplicativo.**
 
-<img src="media/image1.png" style="width:2.15104in;height:4in" />
+<img ![Print2](https://github.com/JecaDev/AppAutentica-o/assets/129800662/971adf63-ccf1-45da-820e-af7adbec2102)/>
 
 ## Login
 
@@ -1026,7 +1027,7 @@ tela principal do aplicativo.**
 **Se você esqueceu sua senha, clique no link de "Recuperar Conta" na
 tela de login.**
 
-<img src="media/image3.png" style="width:2.53646in;height:5.27947in" />
+<img![Print3](https://github.com/JecaDev/AppAutentica-o/assets/129800662/f4e14096-ba74-4d56-b528-dedf487c6aca)/>
 
 ### Preenchimento de E-mail:
 
@@ -1050,7 +1051,7 @@ tela de login.**
 
 **Após a consulta, os detalhes do CEP serão exibidos na tela.**
 
-<img src="media/image1.png" style="width:2.15104in;height:4in" />
+<img![Print1](https://github.com/JecaDev/AppAutentica-o/assets/129800662/4c061c7f-1a26-44d4-b672-43fad880775e)/>
 
 ## Observações:
 
